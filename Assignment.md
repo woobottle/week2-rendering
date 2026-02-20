@@ -28,3 +28,18 @@ Step1
   - 0ms: SSR => 351.19ms, CSR => 439.22ms
   - 1000ms: SSR => 1.45s, CSR => 1.55s
   - 3000ms: SSR => 3.40s, CSR => 3.41s
+
+
+Step3
+
+#### 번들크기 비교
+
+1. 번들 크기 비교
+    - 서버 컴포넌트 페이지: (/markdown-demo/server) : 145B
+    - 클라이언트 컴포넌트 페이지: (/markdown-demo/client) : 42.59KB (40KB면 대충 4만 글자, 영문/숫자/특수문자는 1Byte, 한글은 3Byte)
+
+2. Network탭에서 JS 다운로드 크기 비교
+    - 서버 컴포넌트 페이지: (/markdown-demo/server) : 117KB
+    - 클라이언트 컴포넌트 페이지: (/markdown-demo/client) : 130KB => client 페이지가 13KB로 확인됨
+    => 둘의 차이가 13KB인 이유는 번들에서 보여지는 크기는 압축 전이기 때문 (gzip으로 next > nodejs 서버에서 압축 해줌)
+
