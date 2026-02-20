@@ -1,12 +1,5 @@
-import { marked } from "marked";
+import ServerMarkDown from "./_components/ServerMarkDown";
 
 export default async function ServerMarkDownPage() {
-  const response = await fetch(
-    "https://raw.githubusercontent.com/facebook/react/main/README.md",
-  );
-  const markdown = await response.text();
-  const html = marked(markdown);
-
-  // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  return <ServerMarkDown />;
 }
