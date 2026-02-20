@@ -5,14 +5,14 @@ import type {
 } from "next";
 import { z } from "zod";
 
-const PostSchema = z.object({
+export const PostSchema = z.object({
   userId: z.number(),
   id: z.number(),
   title: z.string(),
   body: z.string(),
 });
 
-const PostListSchema = PostSchema.array();
+export const PostListSchema = PostSchema.array();
 
 type Post = z.infer<typeof PostSchema>;
 type PostList = z.infer<typeof PostListSchema>;
