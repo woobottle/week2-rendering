@@ -5,9 +5,15 @@ interface Props {
 }
 
 const ClientComponent = ({ children }: Props) => {
+  const onClickClientComponent = () => {
+    console.log("ClientComponent");
+  };
+
   return (
     <div>
-      <div>Client Component</div>
+      <button onClick={onClickClientComponent} type="button">
+        Client Component
+      </button>
       {children}
     </div>
   );
